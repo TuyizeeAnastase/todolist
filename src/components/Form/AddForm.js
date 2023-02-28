@@ -6,8 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 export const AddForm = ({ setShowModal, addTask }) => {
   const [date, setDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const [value, onChange] = useState(new Date());
-  const [endValue, onEndChange] = useState(new Date());
+  const [value, setStartChange] = useState(new Date());
+  const [endValue, setEndChange] = useState(new Date());
   const [task, setTask] = useState("");
   const [error, setError] = useState(null);
 
@@ -51,7 +51,8 @@ export const AddForm = ({ setShowModal, addTask }) => {
               <input
                 className={classes.timePicker}
                 type="time"
-                onChange={onChange}
+                value={value}
+                onChange={(e) => setStartChange(e.target.value)}
               />
             </div>
             <p>End Date & Time</p>
@@ -65,7 +66,8 @@ export const AddForm = ({ setShowModal, addTask }) => {
               <input
                 className={classes.timePicker}
                 type="time"
-                onChange={onEndChange}
+                value={endValue}
+                onChange={(e) => setEndChange(e.target.value)}
               />
             </div>
             <div>

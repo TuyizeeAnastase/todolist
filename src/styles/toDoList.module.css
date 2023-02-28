@@ -25,15 +25,34 @@
     text-decoration: none; 
     transition: background .3s ease;
 }
-.list_item:hover{
+/* .list_item:hover{
     background: #182490;
     color: white;
     cursor: pointer;
-}
+} */
 .list_item__title{
     margin: 0;
    word-break: break-all; 
    display: flex;
    flex-direction: column;
    padding: 1.6px;
+}
+.btn{
+    margin-right: 10px;
+}
+.list_button{
+    background-color: rgb(10, 26, 169);
+    padding: 10px;
+    color: white;
+    width: 100px;
+    border: none;
+    outline: none;
+    margin-top: 3px;
+    margin-left: 2px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.list_button:hover{
+    background: rgb(16, 27, 127);
 }

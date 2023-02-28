@@ -4,6 +4,7 @@ import { Header } from "./Header";
 
 export const ToDoList = () => {
   const [list, setList] = useState([]);
+
   const addTask = (task, date, endDate, value, endValue) => {
     setList((previousValue) => {
       return [
@@ -19,6 +20,12 @@ export const ToDoList = () => {
       ];
     });
   };
+  const handleDelete = (id) => {
+    const remove = list.filter((l) => {
+      return l.id !== id;
+    });
+    setList(remove);
+  };
   return (
     <>
       <Header addTask={addTask} />
@@ -27,26 +34,50 @@ export const ToDoList = () => {
           <div>Task</div>
           <div>Start Date & Time</div>
           <div>End Date & Time</div>
+          <div>Actions</div>
         </div>
         <div className={classes.list_body}>
-        {list.length === 0 && (
-            <div className="list-item list-item--message">
-              <span>No List to do</span>
-            </div>
+          {list.length === 0 ? (
+            <>
+              <div className="list-item list-item--message">
+                <span>No List to do</span>
+              </div>
+            </>
+          ) : (
+            <>
+              {list.map((task) => (
+                <div className={classes.list_item}>
+                  <div className={classes.list_item__title}>{task.task}</div>
+                  <div className={classes.list_item__title}>
+                    <span>{task.date.toLocaleString().split(",")[0]}</span>
+                    <span>{task.value}</span>
+                  </div>
+                  <div className={classes.list_item__title}>
+                    <span>{task.endDate.toLocaleString().split(",")[0]}</span>
+                    <span>{task.endValue}</span>
+                  </div>
+                  <div className={classes.list_item__title}>
+                    <div className={classes.btn}>
+                      <button className={classes.list_button}>Edit</button>
+                      <button
+                        onClick={() => {
+                          const confirmBox = window.confirm(
+                            `Do you realy want to delete ${task.task}`
+                          );
+                          if (confirmBox === true) {
+                            handleDelete(task.id);
+                          }
+                        }}
+                        className={classes.list_button}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
           )}
-          {list.map((task) => (
-            <div className={classes.list_item}>
-              <div className={classes.list_item__title}>{task.task}</div>
-              <div className={classes.list_item__title}>
-                <span>{task.date.toLocaleString().split(",")[0]}</span>
-                <span>{task.value.toLocaleTimeString()}</span>
-              </div>
-              <div className={classes.list_item__title}>
-                <span>{task.endDate.toLocaleString().split(",")[0]}</span>
-                <span>{task.endValue.toLocaleTimeString()}</span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </>
