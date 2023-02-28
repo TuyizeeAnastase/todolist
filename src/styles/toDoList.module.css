@@ -1,0 +1,39 @@
+.content_container{
+    margin: 0 auto;
+    padding: 0 1.6rem;
+    max-width:80rem ;
+}
+.list_header{
+    background: #f7f7f7;
+    border: 1px solid darken(#f7f7f7, 7%);
+    color: #666666;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 1.6rem;
+}
+.list_body{
+    margin-bottom: 1.6rem;
+}
+.list_item{
+    border: 2px solid #182490;
+    border-top: none;
+    color: rgb(26, 20, 20);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+    border-radius: 20px;
+    text-decoration: none; 
+    transition: background .3s ease;
+}
+.list_item:hover{
+    background: #182490;
+    color: white;
+    cursor: pointer;
+}
+.list_item__title{
+    margin: 0;
+   word-break: break-all; 
+   display: flex;
+   flex-direction: column;
+   padding: 1.6px;
+}

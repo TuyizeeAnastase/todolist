@@ -1,0 +1,33 @@
+.page_header{
+    background: #f7f7f7;
+    margin-bottom: 3.2rem;
+    padding: 3.2rem 0;
+ }
+
+ .header__content{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.6rem 0;
+}
+.header__title{
+    color:rgb(10, 26, 169);
+    text-decoration: none;
+}
+.button{
+    background:rgb(10, 26, 169);
+    border:none;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size:1.2rem;
+    font-weight:200;
+    line-height: 1;
+    padding:1.2rem;
+    text-align: none;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: rgb(48, 48, 133);
+    cursor: pointer;
+}

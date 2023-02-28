@@ -1,0 +1,74 @@
+.text_input{
+    border: 1px solid #cacccd;
+  height: 20px;
+  font-size: 1.8rem;
+  width: fit-content;
+  padding: 0.8rem;
+  outline: none;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+  }
+  
+  .modal {
+    position: fixed;
+    top: 30vh;
+    left: 20%;
+    width: 50%;
+    z-index: 100;
+    background-color: whitesmoke;
+    border: 2px solid blue;
+    padding: 4rem;
+    /* overflow: hidden; */
+  }
+
+.button{
+    background:rgb(15, 25, 109);
+    border:none;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size:1.2rem;
+    font-weight:100;
+    line-height: 1;
+    padding:1.2rem;
+    text-align: none;
+    text-decoration: none;
+    margin-top: 4px;
+}
+.pickers{
+  display: flex;
+}
+.datePicker{
+  width: fit-content;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  outline: none;
+  margin-top: 4px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.timePicker{
+  width: 500px;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  outline: none;
+  margin-top: 4px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.errorHeader{
+  color: red;
+}
+
